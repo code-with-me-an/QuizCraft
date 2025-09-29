@@ -1,0 +1,706 @@
+:root {
+    --white-color: #f2f2f2;
+    --blue-color: #1870D5;
+    --orange-color: #DF7000;
+    --font-color: #3b3b3b;
+    --border-color: #5151514c;
+    --font-white: #c1c1c1;
+    --font-black: #707070;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: 'Roboto', 'Open Sans', Arial, Helvetica, sans-serif;
+    background-color: var(--white-color);
+
+}
+
+nav {
+    width: 100%;
+    position: relative;
+    height: 14vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.logo img {
+    width: 25vh;
+    margin-left: 5vw;
+    cursor: pointer;
+}
+
+.menu_bar {
+    width: 10vh;
+    margin-right: 10vw;
+}
+
+.menu_bar span {
+    font-size: 9vh;
+    color: var(--blue-color);
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.7s ease;
+}
+
+.menu_bar span:active {
+    color: var(--orange-color);
+    transform: translateY(4px);
+}
+
+.dropdown {
+    position: absolute;
+    top: 16vh;
+    right: 12vw;
+    z-index: 22;
+    background-color: var(--white-color);
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px var(--border-color);
+    transform: translateY(-.8rem);
+    opacity: 0;
+    display: none;
+    transition: transform .4s, opacity .4s ease-in;
+
+}
+
+.dropdown_list {
+    height: 4.5rem;
+    width: 20rem;
+    gap: 9px;
+    z-index: 22;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_list a {
+    display: block;
+    z-index: 22;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--font-color);
+    transition: color .3s ease;
+}
+
+.dropdown_list:hover a {
+    color: var(--orange-color);
+}
+
+.show_dropdown_1 {
+    display: block;
+}
+
+.show_dropdown_2 {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* heading */
+.heading h1 {
+    text-align: center;
+    font-size: 4vw;
+    color: var(--font-color);
+    margin-top: 7vh;
+    font-weight: 600;
+}
+
+.heading h1 span {
+    color: var(--orange-color);
+}
+
+.heading p {
+    text-align: center;
+    margin-top: 2vh;
+    font-size: 1.95vw;
+}
+
+.heading p span {
+    color: var(--blue-color);
+
+}
+
+/* quizbox */
+
+.quizboxes {
+    width: 80vw;
+    height: 30vh;
+    margin: 5vw 10vw 5vw 10vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.quizboxes .generatorBox {
+    width: 30%;
+    height: 60%;
+    margin-left: 7%;
+    margin-right: 7%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .4s linear;
+    background-color: #2e85e898;
+    box-shadow: 5px 5px 30px var(--border-color);
+    outline: 2px solid var(--blue-color);
+    border-radius: 3px;
+    animation: outline_ani 2s infinite;
+    text-decoration: none;
+    font-size: 1.5vw;
+    color: var(--font-color);
+}
+
+.quizboxes .joinBox {
+    width: 30%;
+    height: 60%;
+    margin-left: 7%;
+    margin-right: 7%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .4s linear;
+    background-color: #2e85e898;
+    box-shadow: 5px 5px 30px var(--border-color);
+    outline: 2px solid var(--blue-color);
+    border-radius: 3px;
+    animation: outline_ani 2s infinite;
+    text-decoration: none;
+    font-size: 1.5vw;
+    color: var(--font-color);
+}
+
+@keyframes outline_ani {
+    0% {
+        outline-offset: 4px;
+    }
+
+    100% {
+        outline-offset: 10px;
+        outline-color: #1870d500;
+    }
+
+}
+
+.quizboxes .joinBox:hover span {
+    color: var(--white-color);
+}
+
+.quizboxes .generatorBox:hover span {
+    color: var(--white-color);
+}
+
+.quizboxes .generatorBox:active {
+    transform: translateY(10px);
+}
+
+.quizboxes .joinBox:active {
+    transform: translateY(10px);
+}
+
+/* how to make a quiz */
+.howtomakeBox {
+    width: 100%;
+    height: 25vw;
+    margin-top: 25vh;
+    background-color: var(--font-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.howtomakeBox .heading {
+    color: var(--font-white);
+    font-size: 2.5vw;
+    text-align: center;
+    padding: 1.5vw 0vh;
+    font-weight: 500;
+}
+
+.howtomakeBox .card_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 80%;
+    height: 70%;
+}
+
+.howtomakeBox .card_container .card_1,
+.card_2,
+.card_3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    width: 25%;
+    height: 90%;
+    transition: transform .4s;
+}
+
+.card_container .card_1:hover {
+    transform: translateY(-3px);
+}
+
+.card_container .card_2:hover {
+    transform: translateY(-3px);
+}
+
+.card_container .card_3:hover {
+    transform: translateY(-3px);
+}
+
+.card_container .card_1 h2 {
+    font-size: 2.0vw;
+    background-color: #595959;
+    color: var(--font-white);
+    width: 100%;
+    text-align: center;
+    padding: 2% 0%;
+    margin-bottom: 3%;
+}
+
+#card_1 {
+    color: var(--font-white);
+    font-size: 1.2vw;
+    line-height: 1.8vw;
+}
+
+#card_1 span {
+    width: 100%;
+    display: block;
+    font-size: 1.6vw;
+    color: #707070;
+    margin-bottom: 1.5%;
+}
+
+.card_container .card_2 h2 {
+    font-size: 2.0vw;
+    background-color: #595959;
+    color: var(--font-white);
+    width: 100%;
+    text-align: center;
+    padding: 2% 0%;
+    margin-bottom: 3%;
+}
+
+#card_2 {
+    color: var(--font-white);
+    font-size: 1.2vw;
+    line-height: 1.8vw;
+}
+
+#card_2 span {
+    width: 100%;
+    display: block;
+    font-size: 1.6vw;
+    color: #707070;
+    margin-bottom: 1.5%;
+}
+
+.card_container .card_3 h2 {
+    font-size: 2.0vw;
+    background-color: #595959;
+    color: var(--font-white);
+    width: 100%;
+    text-align: center;
+    padding: 2% 0%;
+    margin-bottom: 3%;
+}
+
+#card_3 {
+    color: var(--font-white);
+    font-size: 1.2vw;
+    line-height: 1.8vw;
+}
+
+#card_3 span {
+    width: 100%;
+    display: block;
+    font-size: 1.6vw;
+    color: var(--font-black);
+    margin-bottom: 1.5%;
+}
+
+/* people count */
+.peoplecount {
+    margin: 5vw 0vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.peoplecount p {
+    font-size: 3vw;
+    color: var(--font-color);
+    font-weight: 500;
+}
+
+.peoplecount span {
+    color: var(--orange-color);
+}
+
+/* footer  */
+
+footer {
+    width: 100%;
+    height: 20vw;
+    background-color: var(--font-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 80%;
+    color: var(--font-black);
+}
+
+.footer .company {
+    width: 30%;
+    color: var(--font-black);
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .company h2 {
+    margin: 1.4vw;
+    font-size: 1.9vw;
+text-decoration: underline;
+}
+
+.footer .company p {
+    font-size: 1.2vw;
+    line-height: 2vw;
+
+}
+
+.footer .quicklink {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer .quicklink h2 {
+    margin: 1.4vw;
+    font-size: 1.9vw;
+    text-decoration: underline;
+}
+
+.footer .quicklink a {
+    line-height: 2vw;
+    text-decoration: none;
+    font-size: 1.2vw;
+    color: var(--font-black);
+}
+
+.footer .contact {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .contact h2 {
+    margin: 1.4vw;
+    font-size: 1.9vw;
+    text-decoration: underline;
+}
+
+.footer .contact p {
+    font-size: 1.2vw;
+    line-height: 2vw;
+}
+
+footer .followLinks {
+    width: 15%;
+}
+
+footer .followLinks h2 {
+    color: var(--font-black);
+    text-decoration: underline;
+    margin-bottom: 1.1vw;
+    margin-left: 1.1vw;
+    font-size: 1.9vw;
+
+}
+
+footer .followLinks .icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+footer .followLinks .icons a {
+    text-decoration: none;
+    color: var(--font-black);
+}
+
+footer .followLinks .icons i {
+    font-size: 1.9vw;
+}
+
+footer p {
+    color: var(--font-black);
+    text-align: center;
+    font-size: 1.3vw;
+}
+
+
+/* media query */
+@media (max-width:600px) {
+    header nav {
+        height: 15vw;
+        z-index: 40;
+    }
+
+    header nav .logo img {
+        width: 30vw;
+    }
+
+    header nav .menu_bar span {
+        font-size: 10vw;
+        margin-right: 2vw;
+    }
+
+    header nav .menu_bar {
+        margin-right: 1.5vw;
+    }
+
+    .dropdown {
+        top: 15vw;
+        width: 100%;
+        right: 0vw;
+        border: 0px solid var(--border-color);
+        border-bottom: 2px solid var(--border-color);
+        box-shadow: 0px 0px 0px var(--border-color);
+        opacity: 1;
+        border-radius: 0px;
+    }
+
+    .dropdown_list {
+        width: 100%;
+        height: 15vw;
+    }
+
+    .dropdown_list a {
+        font-size: 5vw;
+    }
+
+    .heading h1 {
+        font-size: 6.9vw;
+    }
+
+    .heading p {
+        font-size: 4.6vw;
+    }
+
+    .quizboxes {
+        flex-direction: column;
+        height: 60vh;
+    }
+
+    .quizboxes .generatorBox {
+        width: 80%;
+        height: 20%;
+        margin: 20% 0%;
+
+    }
+
+    .quizboxes .joinBox {
+        width: 80%;
+        height: 20%;
+        margin: 20% 0%;
+    }
+
+    .quizboxes .generatorBox span {
+        display: block;
+        font-size: 4.5vw;
+        padding: 12% 22%;
+
+
+    }
+
+    .quizboxes .joinBox span {
+        display: block;
+        font-size: 4.5vw;
+        padding: 12% 29%;
+    }
+
+    .howtomakeBox {
+        height: 150vw;
+        margin-top: 10vh;
+    }
+
+    .howtomakeBox .heading {
+        font-size: 7vw;
+        padding: 3vw 0vh;
+    }
+
+    .howtomakeBox .card_container {
+        flex-direction: column;
+        align-items: center;
+        width: 85%;
+        height: 70%;
+    }
+
+    .howtomakeBox .card_container .card_1,
+    .card_2,
+    .card_3 {
+        width: 100%;
+        height: 90%;
+    }
+
+    .card_container .card_1 h2 {
+        font-size: 6vw;
+        margin-bottom: 5%;
+    }
+
+    #card_1 {
+        font-size: 4vw;
+        line-height: 5.5vw;
+        margin-bottom: 2%;
+    }
+
+    #card_1 span {
+        font-size: 5vw;
+        margin-bottom: 2%;
+
+    }
+
+    .card_container .card_2 h2 {
+        font-size: 6vw;
+        margin-bottom: 5%;
+    }
+
+    #card_2 {
+        font-size: 4vw;
+        line-height: 5.5vw;
+        margin-bottom: 2%;
+    }
+
+    #card_2 span {
+        font-size: 5vw;
+        margin-bottom: 2%;
+    }
+
+    .card_container .card_3 h2 {
+        font-size: 6vw;
+        margin-bottom: 5%;
+    }
+
+    #card_3 {
+        font-size: 4vw;
+        line-height: 5.5vw;
+        margin-bottom: 2%;
+    }
+
+    #card_3 span {
+        font-size: 5vw;
+        margin-bottom: 2%;
+    }
+
+    .peoplecount {
+        width: 100%;
+        height: 4vw;
+        margin: 10vw 0vw;
+
+    }
+
+    .peoplecount p {
+        font-size: 6vw;
+    }
+
+    footer {
+        height: 135vw;
+    }
+
+    .footer {
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .footer .company {
+        width: 80%;
+        align-items: baseline;
+    }
+
+    .footer .company h2 {
+        margin: 0vw 3vw;
+        font-size: 5vw;
+    }
+
+    .footer .company p {
+        font-size: 3vw;
+        line-height: 4vw;
+
+    }
+
+    .footer .quicklink {
+        width: 80%;
+        align-items: baseline;
+
+    }
+
+    .footer .quicklink h2 {
+        font-size: 5vw;
+        margin: 0vw 3vw;
+    }
+
+    .footer .quicklink a {
+        line-height: 4.5vw;
+        font-size: 3vw;
+    }
+
+    .footer .contact {
+        width: 80%;
+        align-items: baseline;
+    }
+
+    .footer .contact h2 {
+        margin: 0vw 3vw;
+        font-size: 5vw;
+    }
+
+    .footer .contact p {
+        font-size: 3vw;
+        line-height: 4vw;
+    }
+
+    footer .followLinks {
+        width: 80%;
+    }
+
+    footer .followLinks h2 {
+        font-size: 5vw;
+        margin: 0vw 3vw;
+    }
+
+    footer .followLinks .icons {
+        justify-content: space-around;
+    }
+
+    footer .followLinks .icons i {
+        margin: 3vw;
+        font-size: 5vw;
+    }
+
+    footer p {
+        font-size: 3vw;
+        padding: 3vw;
+        margin: 1vw;
+    }
+
+}
