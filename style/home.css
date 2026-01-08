@@ -1,0 +1,955 @@
+:root {
+    --white-color: #f2f2f2;
+    --blue-color: #1870D5;
+    --orange-color: #DF7000;
+    --font-color: #3b3b3b;
+    --border-color: #5151514c;
+    --font-white: #c1c1c1;
+    --font-black: #707070;
+    --light-border: #c1c1c1;
+    --background-color: #dfdfdf;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/* main page  */
+
+body {
+    font-family: 'Roboto', 'Open Sans', Arial, Helvetica, sans-serif;
+    background-color: var(--white-color);
+}
+
+nav {
+    width: 100%;
+    position: relative;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.logo img {
+    width: 182px;
+    margin-left: 3vw;
+    cursor: pointer;
+}
+
+.profile {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3vw;
+}
+
+.profile img {
+    width: 58px;
+    height: 58px;
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+.svg_menu{
+    cursor: pointer;
+    width: 90px;
+    fill: var(--blue-color);
+}
+
+.menu_bar:active .svg_menu{
+    fill: #DF7000;
+    transform: translateY(2.5px);
+}
+
+.dropdown {
+    position: absolute;
+    top: 117px;
+    right: 77px;
+    z-index: 22;
+    background-color: var(--white-color);
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px var(--border-color);
+    transform: translateY(-.8rem);
+    opacity: 0;
+    display: none;
+    transition: transform .4s, opacity .4s ease-in;
+
+}
+
+.dropdown_list {
+    height: 4.5rem;
+    width: 20rem;
+    gap: 9px;
+    z-index: 22;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_list a {
+    display: block;
+    z-index: 22;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--font-color);
+    transition: color .3s ease;
+}
+
+.dropdown_list:hover a {
+    color: var(--orange-color);
+}
+
+.show_dropdown_1 {
+    display: block;
+}
+
+.show_dropdown_2 {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* heading */
+.heading h1 {
+    text-align: center;
+    font-size: min(6.7vw ,60px);
+    color: var(--font-color);
+    margin-top: 50px;
+    font-weight: 600;
+}
+
+.heading h1 span {
+    color: var(--orange-color);
+}
+
+.heading p {
+    text-align: center;
+    margin-top: 18px;
+    font-size: min(3.7vw ,29px);
+}
+
+.heading p span {
+    color: var(--blue-color);
+
+}
+
+/* quizbox */
+
+/* createbox */
+
+.quizboxes{
+    margin-top: 50px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.quizboxes .createBox .createButton{
+    width: 215px;
+    height: 60px;
+    margin-top: 130px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #2e85e898;
+    box-shadow: 5px 5px 40px var(--border-color);
+    border-radius: 50px;
+    outline: 2px solid var(--blue-color);
+    transition: transform .4s linear;
+    animation: outline_ani 2s infinite;
+}
+.createBox .createButton span{
+    font-size: 22px;
+    color: var(--font-color);
+}
+.createBox .createButton .arrow{
+    width: 40px;
+    fill: var(--font-black);
+}
+
+
+@keyframes outline_ani {
+    0% {
+        outline-offset: 1px;
+    }
+
+    100% {
+        outline-offset: 5px;
+        outline-color: #00000000;
+    }
+
+}
+.quizboxes .createButton:hover{
+    background-color: #4d97eb9e;
+}
+
+.quizboxes .createButton:active {
+    transform: translateY(5px);
+}
+
+.createBox {
+    position: relative;
+    margin-top: 20px;
+}
+.clickArrow {
+    position: absolute;
+    right: -150px;
+    top: 0px;
+}
+.clickArrow img{
+    width: 140px;
+}
+
+
+/* join-container */
+
+
+.join-container {
+    margin: 140px 10px 20px 10px;
+}
+
+.join-container form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.join-container .quizBox {
+    width: 100%;
+    min-width: 450px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #e3e3e3;
+    border-radius: 10px;
+    border: 2px solid var(--light-border);
+    box-shadow: 0 0 10px var(--font-white);
+}
+
+.join-container .quizBox h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.join-container .quizBox input {
+    width: 100%;
+    padding: 12px;
+    background: var(--white-color);
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: var(--font-black);
+    margin-bottom: 20px;
+}
+
+.join-container .quizBox input:focus{
+    outline: 1.7px solid var(--light-border);
+}
+
+.join-container .quizBox button {
+    width: 100px;
+    padding: 12px;
+    background-color: var(--blue-color);
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--white-color);
+    font-weight: 500;
+    margin: 10px;
+    transition: 0.5s;
+}
+
+.join-container .quizBox button:hover {
+    background: var(--orange-color);
+}
+
+
+
+@media (max-width:600px) {
+    .join-container .quizBox {
+        width: 100%;
+        min-width: 77vw;
+        padding: none;
+        background-color: #e3e3e3;
+    }
+
+    .join-container .form-container form {
+        margin: none;
+    }
+
+    .join-container .form-container {
+        margin: 3vw;
+    }
+}
+
+
+/* generate quiz style  */
+
+.generate-container{
+    margin: 140px 10px 20px 10px;
+}
+
+.generate-container form {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.generate-container .quizBox {
+    width: 100%;
+    min-width: 450px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #e3e3e3;
+    border-radius: 10px;
+    border: 2px solid var(--light-border);
+    box-shadow: 0 0 10px var(--font-white);
+    display: none;
+}
+
+.generate-container .quizBox.active {
+    display: flex;
+}
+
+.generate-container .quizBox h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.quizBox #emptyError1{
+    color: var(--orange-color);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.quizBox #emptyError2{
+    color: var(--orange-color);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.quizBox #emptyError3{
+    color: var(--orange-color);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.quizBox #max{
+    color: var(--orange-color);
+    font-weight: bold;
+}
+
+.generate-container .quizBox h3 {
+    font-size: 20px;
+    text-align: center;
+    margin: 20px;
+}
+
+.generate-container .quizBox label,
+p {
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.generate-container .quizBox input {
+    width: 100%;
+    padding: 12px;
+    background: var(--white-color);
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: var(--font-black);
+    margin-bottom: 20px;
+}
+
+.generate-container .quizBox textarea {
+    width: 100%;
+    padding: 12px;
+    background: var(--white-color);
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: var(--font-black);
+    margin-bottom: 20px;
+}
+
+
+.generate-container .quizBox button {
+    width: 100px;
+    padding: 12px;
+    background-color: var(--blue-color);
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--white-color);
+    font-weight: 500;
+    margin: 10px;
+    transition: 0.5s;
+}
+
+.generate-container .quizBox button:hover {
+    background: var(--orange-color);
+}
+
+
+
+@media (max-width:600px) {
+    .generate-container .quizBox {
+        width: 100%;
+        min-width: 300px;
+    }
+}
+
+.error-message {
+    color: #f04a3b;
+    font-size: 18px;
+    margin: 10px 0px;
+}
+
+
+
+
+
+.join-container .error-message {
+    color: #f04a3b;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+
+
+/* how to make a quiz */
+.howtomakeBox {
+    width: 100%;
+    min-height: 450px;
+    margin-top: 180px;
+    background-color: var(--font-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.howtomakeBox .heading {
+    color: var(--font-white);
+    font-size: 40px;
+    text-align: center;
+    padding: 30px 0px;
+    font-weight: 500;
+}
+
+.howtomakeBox .card_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;  
+    width: 100%; 
+    height: 90%;
+}
+
+.howtomakeBox .card_container .card_1,
+.card_2,
+.card_3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    width: 30%;
+    transition: transform .4s;
+}
+
+.card_container .card_1:hover {
+    transform: translateY(-3px);
+}
+
+.card_container .card_2:hover {
+    transform: translateY(-3px);
+}
+
+.card_container .card_3:hover {
+    transform: translateY(-3px);
+}
+
+.card_container .card_1 h2 {
+    font-size: 30px;
+    background-color: #595959;
+    color: var(--font-white);
+    width: 100%;
+    text-align: center;
+    padding: 2% 0%;
+    margin-bottom: 3%;
+}
+
+#card_1 {
+    height: 100%;
+    color: var(--font-white);
+    font-size: min(2.5vw,19px);
+    line-height: 1.4;
+}
+
+#card_1 span {
+    margin: none;
+    width: 100%;
+    display: block;
+    font-size: min(3vw,25px);
+    color: #707070;
+}
+
+.card_container .card_2 h2 {
+    font-size: 30px;
+    background-color: #595959;
+    color: var(--font-white);
+    width: 100%;
+    text-align: center;
+    padding: 2% 0%;
+    margin-bottom: 3%;
+}
+
+#card_2 {
+    height: 100%;
+    color: var(--font-white);
+    font-size: min(2.5vw,19px);
+    line-height: 1.4;
+}
+
+#card_2 span {
+    margin: none;
+    width: 100%;
+    display: block;
+    font-size: min(3vw,25px);
+    color: #707070;
+}
+
+.card_container .card_3 h2 {
+    font-size: 30px;
+    background-color: #595959;
+    color: var(--font-white);
+    width: 100%;
+    text-align: center;
+    padding: 2% 0%;
+    margin-bottom: 3%;
+}
+
+#card_3 {
+    height: 100%;
+    color: var(--font-white);
+    font-size: min(2.5vw,19px);
+    line-height: 1.4;
+}
+
+#card_3 span {
+    margin: none;
+    width: 100%;
+    display: block;
+    font-size: min(3vw,25px);
+    color: #707070;
+}
+
+/* people count */
+.peoplecount {
+    margin: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.peoplecount p {
+    font-size: min(5vw,44px);
+    color: var(--font-color);
+    font-weight: 500;
+}
+
+.peoplecount span {
+    color: var(--orange-color);
+}
+
+/* footer  */
+
+footer {
+    width: 100%;
+    height: 350px;
+    background-color: var(--font-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: var(--font-black);
+}
+
+.footer .company {
+    width: 35%;
+    color: var(--font-black);
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .company h2 {
+    margin: 20px 0px 10px 10px;
+    font-size: 28px;
+    text-decoration: underline;
+}
+
+.footer .company p {
+    width: 80%;
+    margin-left: 20px;
+    font-size: 17px;
+}
+
+.footer .quicklink {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer .quicklink h2 {
+    margin: 20px 0px 10px 0px;
+    font-size: 28px;
+    text-decoration: underline;
+}
+
+.footer .quicklink a {
+    text-decoration: none;
+    margin-bottom: 7px;
+    font-size: 20px;
+    color: var(--font-black);
+}
+
+.footer .contact {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .contact h2 {
+    margin: 20px 0px 10px 0px;
+    font-size: 28px;
+    text-decoration: underline;
+}
+
+.footer .contact p {
+    text-align: left;
+    font-size: 17px;
+    margin-bottom: 20px;
+    padding: 0px;
+}
+.footer .contact a{
+    font-size: 17px;
+    color: var(--font-black);
+}
+
+footer .followLinks {
+    width: 200px;
+}
+
+footer .followLinks h2 {
+    color: var(--font-black);
+    text-decoration: underline;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-size: 25px;
+
+}
+
+footer .followLinks .icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+footer .followLinks .icons a {
+    text-decoration: none;
+    color: var(--font-black);
+}
+
+footer .followLinks .icons i {
+    font-size: 30px;
+}
+
+footer p {
+    color: var(--font-black);
+    text-align: center;
+    font-size: 17px;
+}
+
+
+/* media query */
+@media (max-width:600px) {
+    header nav {
+        height: 16vw;
+        z-index: 40;
+    }
+
+    header nav .logo img {
+        width: 30vw;
+    }
+
+    .profile {
+        width: 20vw;
+        margin-right: 2vw;
+    }
+
+    .profile img {
+        width: 10vw;
+        height: 10vw;
+        margin-right: 6vw;
+    }
+
+    header nav .menu_bar span {
+        font-size: 12vw;
+    }
+
+    .dropdown {
+        top: 16vw;
+        width: 100%;
+        right: 0vw;
+        border: 0px solid var(--border-color);
+        border-bottom: 2px solid var(--border-color);
+        box-shadow: 0px 0px 0px var(--border-color);
+        opacity: 1;
+        border-radius: 0px;
+    }
+
+    .dropdown_list {
+        width: 100%;
+        height: 15vw;
+    }
+
+    .dropdown_list a {
+        font-size: 5vw;
+    }
+
+    .heading h1 {
+        font-size: 6.9vw;
+    }
+
+    .heading p {
+        font-size: 4.6vw;
+    }
+
+    .quizboxes {
+        flex-direction: column;
+        height: 60vh;
+    }
+
+    .quizboxes .generatorBox {
+        width: 80%;
+        height: 20%;
+        margin: 20% 0%;
+
+    }
+
+    .quizboxes .joinBox {
+        width: 80%;
+        height: 20%;
+        margin: 20% 0%;
+    }
+
+    .quizboxes .generatorBox span {
+        display: block;
+        font-size: 4.5vw;
+        padding: 12% 22%;
+
+
+    }
+
+    .quizboxes .joinBox span {
+        display: block;
+        font-size: 4.5vw;
+        padding: 12% 29%;
+    }
+
+    .howtomakeBox {
+        height: 150vw;
+        margin-top: 10vh;
+    }
+
+    .howtomakeBox .heading {
+        font-size: 7vw;
+        padding: 3vw 0vh;
+    }
+
+    .howtomakeBox .card_container {
+        flex-direction: column;
+        align-items: center;
+        width: 85%;
+        height: 70%;
+    }
+
+    .howtomakeBox .card_container .card_1,
+    .card_2,
+    .card_3 {
+        width: 100%;
+        height: 90%;
+    }
+
+    .card_container .card_1 h2 {
+        font-size: 6vw;
+        margin-bottom: 5%;
+    }
+
+    #card_1 {
+        font-size: 4vw;
+        line-height: 5.5vw;
+        margin-bottom: 4%;
+    }
+
+    #card_1 span {
+        font-size: 5vw;
+        margin-bottom: 2%;
+
+    }
+
+    .card_container .card_2 h2 {
+        font-size: 6vw;
+        margin-bottom: 5%;
+    }
+
+    #card_2 {
+        font-size: 4vw;
+        line-height: 5.5vw;
+        margin-bottom: 4%;
+    }
+
+    #card_2 span {
+        font-size: 5vw;
+        margin-bottom: 2%;
+    }
+
+    .card_container .card_3 h2 {
+        font-size: 6vw;
+        margin-bottom: 5%;
+    }
+
+    #card_3 {
+        font-size: 4vw;
+        line-height: 5.5vw;
+        margin-bottom: 4%;
+    }
+
+    #card_3 span {
+        font-size: 5vw;
+        margin-bottom: 2%;
+    }
+
+    .peoplecount {
+        width: 100%;
+        height: 4vw;
+        margin: 10vw 0vw;
+
+    }
+
+    .peoplecount p {
+        font-size: 6vw;
+    }
+
+    footer {
+        height: 135vw;
+    }
+
+    .footer {
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .footer .company {
+        width: 80%;
+        align-items: baseline;
+    }
+
+    .footer .company h2 {
+        margin: 0vw 3vw;
+        font-size: 5vw;
+    }
+
+    .footer .company p {
+        font-size: 3vw;
+        line-height: 4vw;
+
+    }
+
+    .footer .quicklink {
+        width: 80%;
+        align-items: baseline;
+
+    }
+
+    .footer .quicklink h2 {
+        font-size: 5vw;
+        margin: 0vw 3vw;
+    }
+
+    .footer .quicklink a {
+        line-height: 4.5vw;
+        font-size: 3vw;
+    }
+
+    .footer .contact {
+        width: 80%;
+        align-items: baseline;
+    }
+
+    .footer .contact h2 {
+        margin: 0vw 3vw;
+        font-size: 5vw;
+    }
+
+    .footer .contact p {
+        font-size: 3vw;
+    }
+    .footer .contact a{
+        line-height: 4.5vw;
+        font-size: 3vw;
+    }
+
+    footer .followLinks {
+        width: 80%;
+    }
+
+    footer .followLinks h2 {
+        font-size: 5vw;
+        margin: 0vw 3vw;
+    }
+
+    footer .followLinks .icons {
+        justify-content: space-around;
+    }
+
+    footer .followLinks .icons i {
+        margin: 3vw;
+        font-size: 5vw;
+    }
+
+    footer p {
+        font-size: 3vw;
+        padding: 3vw;
+        margin: 1vw;
+    }
+
+}
+
+
+

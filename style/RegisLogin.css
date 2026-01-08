@@ -1,0 +1,126 @@
+:root {
+    --white-color: #f2f2f2;
+    --blue-color: #1870D5;
+    --orange-color: #DF7000;
+    --font-color: #3b3b3b;
+    --border-color: #5151514c;
+    --font-white: #c1c1c1;
+    --font-black: #707070;
+    --light-border: #c1c1c1;
+    --background-color: #dfdfdf;
+}
+
+* {
+    font-family: 'Roboto', 'Open Sans', Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--white-color);
+    color: var(--font-color);
+}
+
+.container {
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.form-box {
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    background-color: #e3e3e3;
+    border-radius: 10px;
+    border: 2px solid var(--light-border);
+    box-shadow: 0 0 10px var(--font-white);
+}
+
+.form-box form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-box h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-box input {
+    width: 100%;
+    padding: 12px;
+    background: var(--white-color);
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: var(--font-black);
+    margin: 10px;
+}
+
+.form-box button {
+    width: 50%;
+    padding: 12px;
+    background-color: var(--blue-color);
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--white-color);
+    font-weight: 500;
+    margin: 10px;
+    transition: 0.5s;
+}
+
+.form-box button:hover {
+    background: var(--orange-color);
+}
+
+.form-box p {
+    font-size: 14.5px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.form-box p a {
+    text-decoration: none;
+    color: var(--blue-color);
+}
+
+.form-box p a:hover {
+    text-decoration: underline;
+    color: var(--orange-color);
+}
+
+@media (min-width:1024px) {
+    .form-box {
+        width: 100%;
+        min-width: 350px;
+    }
+}
+
+.error-message {
+    width: 100%;
+    font-size: 16px;
+    color: #f04a3b;
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+#nameErr,
+#emailErr,
+#passErr {
+    color: #f04a3b;
+    font-size: small;
+}

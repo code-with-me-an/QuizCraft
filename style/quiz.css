@@ -1,0 +1,359 @@
+:root {
+    --white-color: #f2f2f2;
+    --blue-color: #1870D5;
+    --orange-color: #DF7000;
+    --font-color: #3b3b3b;
+    --border-color: #5151514c;
+    --font-white: #c1c1c1;
+    --font-black: #707070;
+    --light-border: #c1c1c1;
+    --background-color: #dfdfdf;
+}
+
+* {
+    font-family: 'Roboto', 'Open Sans', Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--white-color);
+    color: var(--font-color);
+}
+
+.join-container {
+    margin: 10px;
+}
+
+.join-container form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.join-container .quizBox {
+    width: 100%;
+    min-width: 400px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #e3e3e3;
+    border-radius: 10px;
+    border: 2px solid var(--light-border);
+    box-shadow: 0 0 10px var(--font-white);
+}
+
+.join-container .quizBox h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.join-container .quizBox input {
+    width: 100%;
+    padding: 12px;
+    background: var(--white-color);
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: var(--font-black);
+    margin-bottom: 20px;
+}
+
+.join-container .quizBox button {
+    width: 100px;
+    padding: 12px;
+    background-color: var(--blue-color);
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--white-color);
+    font-weight: 500;
+    margin: 10px;
+    transition: 0.5s;
+}
+
+.join-container .quizBox button:hover {
+    background: var(--orange-color);
+}
+
+
+
+@media (max-width:600px) {
+    .join-container .quizBox {
+        width: 100%;
+        min-width: 77vw;
+        padding: none;
+        background-color: #e3e3e3;
+    }
+
+    .join-container .form-container form {
+        margin: none;
+    }
+
+    .join-container .form-container {
+        margin: 3vw;
+    }
+}
+
+.join-container .error-message {
+    color: #f04a3b;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+/* onlineQuiz styling */
+
+
+
+
+
+
+
+.online-container {
+    margin: 10px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.online-container form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.online-container .quizBox {
+    width: 100%;
+    min-width: 400px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #e3e3e3;
+    border-radius: 10px;
+    border: 2px solid var(--light-border);
+    box-shadow: 0 0 10px var(--font-white);
+}
+
+.online-container .quizBox h2 {
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.online-container .quizBox p {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.online-container .quizBox h3 {
+    width: 100%;
+    font-size: 18px;
+    margin: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.online-container .quizBox input[type="radio"] {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #555;
+    margin: 0 5px;
+}
+
+.online-container .quizBox .option {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    height: auto;
+    min-height: 40px;
+    margin: 10px 0px 20px 0px;
+    cursor: pointer;
+}
+
+
+
+.online-container .quizBox button {
+    width: 150px;
+    padding: 12px;
+    background-color: var(--blue-color);
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--white-color);
+    font-weight: 500;
+    margin: 30px 0px 10px 0px;
+    transition: 0.5s;
+}
+
+.online-container .quizBox button:hover {
+    background: var(--orange-color);
+}
+
+@media (max-width:500px) {
+    .online-container .quizBox {
+        width: 100%;
+        min-width: 77vw;
+    }
+
+}
+
+.online-container .error-message {
+    color: #f04a3b;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.online-container .score-message {
+    color: #27bf4dff;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* generate quiz styling */
+
+
+
+
+
+
+.generate-container form {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.generate-container .quizBox {
+    width: 100%;
+    min-width: 400px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #e3e3e3;
+    border-radius: 10px;
+    border: 2px solid var(--light-border);
+    box-shadow: 0 0 10px var(--font-white);
+    display: none;
+}
+
+.generate-container .quizBox.active {
+    display: flex;
+}
+
+.generate-container .quizBox h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.generate-container .quizBox h3 {
+    font-size: 20px;
+    text-align: center;
+    margin: 20px;
+}
+
+.generate-container .quizBox label,
+p {
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.generate-container .quizBox input {
+    width: 100%;
+    padding: 12px;
+    background: var(--white-color);
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: var(--font-black);
+    margin-bottom: 20px;
+}
+
+.generate-container .quizBox textarea {
+    width: 100%;
+    padding: 12px;
+    background: var(--white-color);
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: var(--font-black);
+    margin-bottom: 20px;
+}
+
+
+.generate-container .quizBox button {
+    width: 100px;
+    padding: 12px;
+    background-color: var(--blue-color);
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--white-color);
+    font-weight: 500;
+    margin: 10px;
+    transition: 0.5s;
+}
+
+.generate-container .quizBox button:hover {
+    background: var(--orange-color);
+}
+
+
+
+@media (max-width:600px) {
+    .generate-container .quizBox {
+        width: 100%;
+        min-width: 300px;
+    }
+}
+
+.error-message {
+    color: #f04a3b;
+    font-size: 18px;
+    margin: 10px 0px;
+}
+
+
+
+
+
+
+/* jbibscao
+
+
+
+body {
+            
+        }
+
+        */

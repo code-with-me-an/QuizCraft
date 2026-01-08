@@ -1,0 +1,250 @@
+:root {
+    --white-color: #f2f2f2;
+    --blue-color: #1870D5;
+    --orange-color: #DF7000;
+    --font-color: #3b3b3b;
+    --border-color: #5151514c;
+    --font-white: #c1c1c1;
+    --font-black: #707070;
+    --light-border: #c1c1c1;
+    --background-color: #dfdfdf;
+}
+
+* {
+    font-family: 'Roboto', 'Open Sans', Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background: var(--background-color);
+    color: var(--font-color);
+}
+
+.container {
+    max-width: 90vw;
+    margin: 20px auto;
+    background: var(--white-color);
+    border-radius: 10px;
+    border: 2px solid var(--light-border);
+    box-shadow: 0 0 10px var(--font-white);
+    padding: 20px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.profile-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--light-border);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.profile-icon img {
+    width: 100%;
+    height: 100%;
+    fill: var(--font-white);
+}
+
+.profile h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+h3 {
+    margin: 15px 0 10px;
+    font-size: 18px;
+}
+
+.logout {
+    width: 100px;
+    position: absolute;
+    right: 20px;
+    top: 25px;
+}
+
+.logout button {
+    width: 90%;
+    padding: 8px;
+    margin-left: 10px;
+    background-color: var(--blue-color);
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--white-color);
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+.logout button:hover {
+    background: var(--orange-color);
+}
+
+.quiz-list {
+    border: 1px solid var(--light-border);
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.quiz-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--light-border);
+}
+
+.quiz-row:last-child {
+    border-bottom: none;
+}
+
+.quiz-row.header {
+    font-weight: bold;
+}
+
+.quiz-row form button {
+    border: none;
+    outline: none;
+    color: var(--blue-color);
+    font-size: 16px;
+    text-decoration: underline;
+}
+
+.quiz-row form button:hover {
+    color: var(--orange-color);
+    text-decoration: underline;
+}
+
+.search-container {
+    width: 400px;
+    height: 20px;
+    padding: 20px 0px;
+}
+
+.search-container form {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.search-container input {
+    width: 30%;
+    margin-left: 10px;
+    padding: 8px;
+    border: none;
+    outline: solid 1px var(--light-border);
+    background: #fefefe;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.search-container button {
+    width: 25%;
+    padding: 8px;
+    margin-left: 10px;
+    background-color: var(--blue-color);
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--white-color);
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+.search-container button:hover {
+    background: var(--orange-color);
+}
+
+.search-container label {
+    font-size: 18px;
+    font-weight: bold;
+
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    table-layout: fixed;
+}
+
+table th,
+table td {
+    border: 1px solid var(--light-border);
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background: var(--blue-color);
+    color: white;
+}
+
+table #submitted_at {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.date {
+    margin-left: 20px;
+}
+
+.time {
+    margin-left: 20px;
+}
+
+@media (max-width:600px) {
+    .search-container {
+        width: 300px;
+        height: 60px;
+        padding: 20px 0px;
+    }
+
+    .search-container form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-container input {
+        margin-left: 0px;
+    }
+
+    .search-container form label {
+        margin: 8px;
+    }
+
+    table {
+        table-layout: unset;
+    }
+
+    .logout {
+        width: 80px;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+    }
+
+    .logout button {
+        font-size: 15px;
+    }
+}
+
+.error-message {
+    color: #f04a3b;
+    font-size: 18px;
+    margin: 10px 0px;
+}

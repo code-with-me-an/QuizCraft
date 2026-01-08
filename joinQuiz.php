@@ -1,0 +1,93 @@
+<?php
+include("conn.php");
+session_start();
+$error = '';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $link = $_POST['link'] ?? '';
+    $examinee = $_POST['examinee'] ?? '';
+    $link = trim($link);
+    $examinee = trim($examinee);
+
+    if (preg_match("/^[A-Z0-9]+/", $link) && preg_match("/^[A-z]+/", $examinee)) {
+
+        $link = mysqli_real_escape_string($conn, $link);
+        $examinee = mysqli_real_escape_string($conn, $examinee);
+
+        $sql = "SELECT * FROM quizzes WHERE share_code = '$link'";
+        $table = mysqli_query($conn, $sql);
+        if (!$table) {
+            die("error in the query " . mysqli_error($conn));
+        } else {
+            if (mysqli_num_rows($table) == 1) {
+                $row = mysqli_fetch_assoc($table);
+                $quiz_id = $row['quiz_id'] ?? '';
+
+                $sql = "SELECT * FROM answers WHERE examinee = '$examinee' AND quiz_id = '$quiz_id'";
+                $checkSubmit = mysqli_query($conn, $sql);
+                if (!$checkSubmit) {
+                    die("error in the query " . mysqli_error($conn));
+                } else {
+                    if (mysqli_num_rows($checkSubmit) > 0) {
+                        $error = "Already submitted";
+                    } else {
+                        $_SESSION['share_code'] = $link;
+                        $_SESSION['examinee'] = $examinee;
+                        echo "<script>
+                            window.open('OnlineQuiz.php','_blank');
+                        </script>";
+                    }
+                }
+            } else {
+                $error = "invalid share code";
+            }
+        }
+    } else {
+        $error = "invalid input field";
+    }
+}
+
+
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join quiz page</title>
+    <link rel="stylesheet" href="style/quiz.css">
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <div class="join-container">
+        <form action="joinQuiz.php" method="post" id="form">
+            <div class="quizBox" id="quizBox">
+                <h2>Join Quiz</h2>
+                <?php echo "<p class='error-message'>$error</p>"; ?>
+                <input type="text" placeholder="Paste share code here" name="link">
+                <input type="text" placeholder="Enter name" name="examinee">
+                <button type="button" onclick="submitForm()">Join Quiz</button>
+            </div>
+        </form>
+
+    </div>
+    <script>
+        function submitForm() {
+            link = document.getElementsByName('link')[0].value.trim();
+            examinee = document.getElementsByName('examinee')[0].value.trim();
+            if((link == null || link == '')||(examinee == null || examinee == '')){
+                window.alert("Please fill the options");
+            }else{
+                document.getElementById('form').submit();
+            }
+        }
+    </script>
+</body>
+
+</html>
