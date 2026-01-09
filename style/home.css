@@ -13,6 +13,7 @@
 * {
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
 
 
@@ -54,13 +55,13 @@ nav {
     cursor: pointer;
 }
 
-.svg_menu{
+.profile .svg_menu {
     cursor: pointer;
     width: 90px;
     fill: var(--blue-color);
 }
 
-.menu_bar:active .svg_menu{
+.menu_bar:active .svg_menu {
     fill: #DF7000;
     transform: translateY(2.5px);
 }
@@ -118,7 +119,7 @@ nav {
 /* heading */
 .heading h1 {
     text-align: center;
-    font-size: min(6.7vw ,60px);
+    font-size: min(6.7vw, 60px);
     color: var(--font-color);
     margin-top: 50px;
     font-weight: 600;
@@ -131,7 +132,7 @@ nav {
 .heading p {
     text-align: center;
     margin-top: 18px;
-    font-size: min(3.7vw ,29px);
+    font-size: min(3.7vw, 29px);
 }
 
 .heading p span {
@@ -143,8 +144,8 @@ nav {
 
 /* createbox */
 
-.quizboxes{
-    margin-top: 50px;
+.quizboxes {
+    margin-top: 150px;
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
@@ -152,7 +153,7 @@ nav {
     justify-content: center;
 }
 
-.quizboxes .createBox .createButton{
+.quizboxes .createBox .createButton {
     width: 215px;
     height: 60px;
     margin-top: 130px;
@@ -167,11 +168,13 @@ nav {
     transition: transform .4s linear;
     animation: outline_ani 2s infinite;
 }
-.createBox .createButton span{
+
+.createBox .createButton span {
     font-size: 22px;
     color: var(--font-color);
 }
-.createBox .createButton .arrow{
+
+.createBox .createButton .arrow {
     width: 40px;
     fill: var(--font-black);
 }
@@ -188,7 +191,8 @@ nav {
     }
 
 }
-.quizboxes .createButton:hover{
+
+.quizboxes .createButton:hover {
     background-color: #4d97eb9e;
 }
 
@@ -196,16 +200,18 @@ nav {
     transform: translateY(5px);
 }
 
-.createBox {
+.quizboxes .createBox {
     position: relative;
     margin-top: 20px;
 }
-.clickArrow {
+
+.quizboxes .clickArrow {
     position: absolute;
-    right: -150px;
-    top: 0px;
+    right: -100px;
+    top: -50px;
 }
-.clickArrow img{
+
+.clickArrow img {
     width: 140px;
 }
 
@@ -214,7 +220,8 @@ nav {
 
 
 .join-container {
-    margin: 140px 10px 20px 10px;
+    width: 100%;
+    margin: 140px 0px 20px 0px;
 }
 
 .join-container form {
@@ -224,7 +231,7 @@ nav {
 }
 
 .join-container .quizBox {
-    width: 100%;
+    margin: 0px 10px;
     min-width: 450px;
     padding: 30px;
     display: flex;
@@ -255,7 +262,7 @@ nav {
     margin-bottom: 20px;
 }
 
-.join-container .quizBox input:focus{
+.join-container .quizBox input:focus {
     outline: 1.7px solid var(--light-border);
 }
 
@@ -279,27 +286,9 @@ nav {
 
 
 
-@media (max-width:600px) {
-    .join-container .quizBox {
-        width: 100%;
-        min-width: 77vw;
-        padding: none;
-        background-color: #e3e3e3;
-    }
-
-    .join-container .form-container form {
-        margin: none;
-    }
-
-    .join-container .form-container {
-        margin: 3vw;
-    }
-}
-
-
 /* generate quiz style  */
 
-.generate-container{
+.generate-container {
     margin: 140px 10px 20px 10px;
 }
 
@@ -334,22 +323,26 @@ nav {
     text-align: center;
     margin-bottom: 10px;
 }
-.quizBox #emptyError1{
+
+.quizBox #emptyError1 {
     color: var(--orange-color);
     font-weight: bold;
     margin-bottom: 10px;
 }
-.quizBox #emptyError2{
+
+.quizBox #emptyError2 {
     color: var(--orange-color);
     font-weight: bold;
     margin-bottom: 10px;
 }
-.quizBox #emptyError3{
+
+.quizBox #emptyError3 {
     color: var(--orange-color);
     font-weight: bold;
     margin-bottom: 10px;
 }
-.quizBox #max{
+
+.quizBox #max {
     color: var(--orange-color);
     font-weight: bold;
 }
@@ -379,6 +372,10 @@ p {
     margin-bottom: 20px;
 }
 
+.generate-container .quizBox input:focus {
+    outline: 1.7px solid var(--light-border);
+}
+
 .generate-container .quizBox textarea {
     width: 100%;
     padding: 12px;
@@ -391,6 +388,9 @@ p {
     margin-bottom: 20px;
 }
 
+.generate-container .quizBox textarea:focus {
+    outline: 1.7px solid var(--light-border);
+}
 
 .generate-container .quizBox button {
     width: 100px;
@@ -460,8 +460,8 @@ p {
 .howtomakeBox .card_container {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;  
-    width: 100%; 
+    justify-content: space-around;
+    width: 100%;
     height: 90%;
 }
 
@@ -501,15 +501,15 @@ p {
 #card_1 {
     height: 100%;
     color: var(--font-white);
-    font-size: min(2.5vw,19px);
+    font-size: min(2.5vw, 19px);
     line-height: 1.4;
 }
 
 #card_1 span {
-    margin: none;
+    margin: 0px;
     width: 100%;
     display: block;
-    font-size: min(3vw,25px);
+    font-size: min(3vw, 25px);
     color: #707070;
 }
 
@@ -526,15 +526,15 @@ p {
 #card_2 {
     height: 100%;
     color: var(--font-white);
-    font-size: min(2.5vw,19px);
+    font-size: min(2.5vw, 19px);
     line-height: 1.4;
 }
 
 #card_2 span {
-    margin: none;
+    margin: 0px;
     width: 100%;
     display: block;
-    font-size: min(3vw,25px);
+    font-size: min(3vw, 25px);
     color: #707070;
 }
 
@@ -551,28 +551,28 @@ p {
 #card_3 {
     height: 100%;
     color: var(--font-white);
-    font-size: min(2.5vw,19px);
+    font-size: min(2.5vw, 19px);
     line-height: 1.4;
 }
 
 #card_3 span {
-    margin: none;
+    margin: 0px;
     width: 100%;
     display: block;
-    font-size: min(3vw,25px);
+    font-size: min(3vw, 25px);
     color: #707070;
 }
 
 /* people count */
 .peoplecount {
-    margin: 60px;
+    margin: 60px 0px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .peoplecount p {
-    font-size: min(5vw,44px);
+    font-size: min(5vw, 44px);
     color: var(--font-color);
     font-weight: 500;
 }
@@ -616,6 +616,7 @@ footer {
     width: 80%;
     margin-left: 20px;
     font-size: 17px;
+     font-weight: 300;
 }
 
 .footer .quicklink {
@@ -656,7 +657,8 @@ footer {
     margin-bottom: 20px;
     padding: 0px;
 }
-.footer .contact a{
+
+.footer .contact a {
     font-size: 17px;
     color: var(--font-black);
 }
@@ -699,33 +701,33 @@ footer p {
 /* media query */
 @media (max-width:600px) {
     header nav {
-        height: 16vw;
+        height: 70px;
         z-index: 40;
     }
 
     header nav .logo img {
-        width: 30vw;
+        width: 130px;
     }
 
     .profile {
-        width: 20vw;
-        margin-right: 2vw;
+        width: 100px;
+        margin-right: 15px;
     }
 
     .profile img {
-        width: 10vw;
-        height: 10vw;
-        margin-right: 6vw;
+        width: 45px;
+        height: 45px;
+        margin-right: 15px;
     }
 
-    header nav .menu_bar span {
-        font-size: 12vw;
+    .profile .svg_menu {
+        width: 60px;
     }
 
     .dropdown {
-        top: 16vw;
+        top: 70px;
         width: 100%;
-        right: 0vw;
+        right: 0px;
         border: 0px solid var(--border-color);
         border-bottom: 2px solid var(--border-color);
         box-shadow: 0px 0px 0px var(--border-color);
@@ -735,61 +737,69 @@ footer p {
 
     .dropdown_list {
         width: 100%;
-        height: 15vw;
+        height: 50px;
     }
 
     .dropdown_list a {
-        font-size: 5vw;
+        font-size: 20px;
     }
 
     .heading h1 {
-        font-size: 6.9vw;
+        font-size: 7vw;
     }
 
     .heading p {
-        font-size: 4.6vw;
+        font-size: 5vw;
     }
 
     .quizboxes {
-        flex-direction: column;
-        height: 60vh;
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
 
-    .quizboxes .generatorBox {
-        width: 80%;
-        height: 20%;
-        margin: 20% 0%;
-
+    .quizboxes .createBox .createButton {
+        width: 170px;
+        height: 50px;
     }
 
-    .quizboxes .joinBox {
-        width: 80%;
-        height: 20%;
-        margin: 20% 0%;
+    .quizboxes .createBox .createButton span {
+        font-size: 20px;
+    }
+
+    .quizboxes .createBox .createButton .arrow {
+        width: 35px;
+    }
+
+    .quizboxes .clickArrow img {
+        width: 100px;
+    }
+
+    .quizboxes .clickArrow {
+        right: -60px;
+        top: -3px;
     }
 
     .quizboxes .generatorBox span {
         display: block;
         font-size: 4.5vw;
         padding: 12% 22%;
-
-
     }
 
-    .quizboxes .joinBox span {
-        display: block;
-        font-size: 4.5vw;
-        padding: 12% 29%;
+    .join-container{
+        width: 100%;
     }
-
+   
+    .join-container form .quizBox {
+        min-width: 330px;
+        background-color: #e3e3e3;
+    }
     .howtomakeBox {
-        height: 150vw;
-        margin-top: 10vh;
+        height: 750px;
+        margin: 100px 0px 50px 0px;
     }
 
     .howtomakeBox .heading {
-        font-size: 7vw;
-        padding: 3vw 0vh;
+        font-size: 30px;
     }
 
     .howtomakeBox .card_container {
@@ -807,67 +817,56 @@ footer p {
     }
 
     .card_container .card_1 h2 {
-        font-size: 6vw;
-        margin-bottom: 5%;
+        font-size: 25px;
     }
 
     #card_1 {
-        font-size: 4vw;
-        line-height: 5.5vw;
-        margin-bottom: 4%;
+        font-size: 16px;
+        margin-bottom: 20px;
     }
 
     #card_1 span {
-        font-size: 5vw;
-        margin-bottom: 2%;
+        font-size: 20px;
 
     }
 
     .card_container .card_2 h2 {
-        font-size: 6vw;
-        margin-bottom: 5%;
+        font-size: 25px;
     }
 
     #card_2 {
-        font-size: 4vw;
-        line-height: 5.5vw;
-        margin-bottom: 4%;
+        font-size: 16px;
+        margin-bottom: 20px;
     }
 
     #card_2 span {
-        font-size: 5vw;
-        margin-bottom: 2%;
+        font-size: 20px;
     }
 
     .card_container .card_3 h2 {
-        font-size: 6vw;
-        margin-bottom: 5%;
+        font-size: 25px;
     }
 
     #card_3 {
-        font-size: 4vw;
-        line-height: 5.5vw;
-        margin-bottom: 4%;
+        font-size: 16px;
+        margin-bottom: 20px;
     }
 
     #card_3 span {
-        font-size: 5vw;
-        margin-bottom: 2%;
+        font-size: 20px;
     }
 
     .peoplecount {
-        width: 100%;
-        height: 4vw;
-        margin: 10vw 0vw;
-
+        height: 50px;
     }
 
     .peoplecount p {
-        font-size: 6vw;
+        font-size: 25px;
     }
 
     footer {
-        height: 135vw;
+        height:550px;
+        margin-top: 50px;
     }
 
     .footer {
@@ -877,18 +876,19 @@ footer p {
 
     .footer .company {
         width: 80%;
-        align-items: baseline;
+        margin: 20px 0px 0px 15px;
     }
 
     .footer .company h2 {
-        margin: 0vw 3vw;
-        font-size: 5vw;
+        height: 15px;
+        margin: 0px 0px 0px 0px;
+        font-size: 20px;
     }
 
     .footer .company p {
-        font-size: 3vw;
-        line-height: 4vw;
-
+        width: 100%;
+        font-size: 15px;
+        font-weight: 300;
     }
 
     .footer .quicklink {
@@ -898,13 +898,13 @@ footer p {
     }
 
     .footer .quicklink h2 {
-        font-size: 5vw;
+        font-size: 20px;
         margin: 0vw 3vw;
     }
 
     .footer .quicklink a {
-        line-height: 4.5vw;
-        font-size: 3vw;
+        margin-top: 6px;
+        font-size: 16px;
     }
 
     .footer .contact {
@@ -913,25 +913,26 @@ footer p {
     }
 
     .footer .contact h2 {
-        margin: 0vw 3vw;
-        font-size: 5vw;
+        margin: 0px 0px 10px 10px;
+        font-size: 20px;
     }
 
     .footer .contact p {
-        font-size: 3vw;
+        margin-top: 0px;
+        font-size: 15px;
     }
-    .footer .contact a{
-        line-height: 4.5vw;
-        font-size: 3vw;
+
+    .footer .contact a {
+        font-size: 15px;
     }
 
     footer .followLinks {
-        width: 80%;
+        width: 50%;
     }
 
     footer .followLinks h2 {
-        font-size: 5vw;
-        margin: 0vw 3vw;
+        font-size: 20px;
+        margin: 0vw 15px;
     }
 
     footer .followLinks .icons {
@@ -939,17 +940,13 @@ footer p {
     }
 
     footer .followLinks .icons i {
-        margin: 3vw;
-        font-size: 5vw;
+        margin: 15px;
+        font-size: 27px;
     }
 
     footer p {
-        font-size: 3vw;
-        padding: 3vw;
-        margin: 1vw;
+        font-size: 13px;
+        padding: 10px 0px 3px 0px;
+
     }
-
 }
-
-
-

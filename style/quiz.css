@@ -92,12 +92,12 @@ body {
     .join-container .quizBox {
         width: 100%;
         min-width: 77vw;
-        padding: none;
+        padding: 0px;
         background-color: #e3e3e3;
     }
 
     .join-container .form-container form {
-        margin: none;
+        margin: 0px;
     }
 
     .join-container .form-container {

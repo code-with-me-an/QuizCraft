@@ -116,7 +116,7 @@ function nextBox(quizBox) {
                         <input type="text" name="correct_option[${i}]" maxlength="1" required>
                         `;
                     }
-                    container.innerHTML += "<div class='buttons'><button type='button' onclick='prevBox(3)'>Previous</button><button type='submit'>Submit</button></div>"
+                    container.innerHTML += "<div class='buttons'><button type='button' onclick='prevBox(3)'>Previous</button><button type='submit'>Generate</button></div>"
                 } else {
                     alert('you can create upto 50 quizzes');
                 }

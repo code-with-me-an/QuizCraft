@@ -129,7 +129,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </svg>
                 </div>
                 <div class="clickArrow">
-                    <img src="photo/click.svg" alt="click arrow">
+                    <img src="photo/arrow1.svg" alt="click arrow">
                 </div>
             </div>
             <div class="join-container">
@@ -141,8 +141,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <input type="text" placeholder="Enter name" name="examinee">
                         <button type="button" onclick="submitForm()">Join Quiz</button>
                     </div>
-                </form>
-
+                </form> 
             </div>
         </div>
         <div class="howtomakeBox" id="help">
@@ -162,8 +161,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div id="card_2">
                         <span>Add questions</span>
                         Add the number of questions you want to create, then click the Next button. 
-                        This creates the question skeleton, after which you can add detailed question text, 
-                        options, and the correct option (maximum of 50 questions).
+                        This creates the question skeleton. Now you can add detailed question text, 
+                        options and the correct option, after click the Generate button to continue.. (maximum of 50 questions).
                     </div>
                 </div>
                 <div class="card_3">

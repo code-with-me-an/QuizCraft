@@ -164,26 +164,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="card_1">
                     <h2>1</h2>
                     <div id="card_1">
-                        <span>Select your quiz type</span>
-                        Built for students and teachers to create and manage online exams.
-                        There are different types of quizzes, such as multiple-choice questions,
-                        short-answer questions, and descriptive questions.
+                        <span>Add Quiz Title</span>
+                        To start creating your quiz, first log in to the portal. 
+                        After logging in, add an appropriate title and description for the quiz, 
+                        then click the Next button at the bottom.
                     </div>
                 </div>
                 <div class="card_2">
                     <h2>2</h2>
                     <div id="card_2">
                         <span>Add questions</span>
-                        Add a title, description, and time limit for the quiz,
-                        then enter the questions and select the type of answers.
+                        Add the number of questions you want to create, then click the Next button. 
+                        This creates the question skeleton. Now you can add detailed question text, 
+                        options and the correct option, after click the Generate button to continue.. (maximum of 50 questions).
                     </div>
                 </div>
                 <div class="card_3">
                     <h2>3</h2>
                     <div id="card_3">
                         <span>Share quiz</span>
-                        After saving the quiz, you will get a link that
-                        you can share with your students or friends.
+                        After the quiz is created, a unique share code and a preview are generated. 
+                        The share code is provided to students to attend the created quiz.
                     </div>
                 </div>
             </div>
@@ -196,8 +197,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="footer">
             <div class="company">
                 <h2>QuizCraft</h2>
-                <p>this website provide free &
-                    Unlimited quiz creation</p>
+                <p>Quizcraft is a free and open source website provides
+                    Unlimited quiz Creation, Sharing and Join. Created for students 
+                    and teachers to make online exams simple and fast.
+                </p>
             </div>
             <div class="quicklink">
                 <h2>Quick Links</h2>
@@ -208,20 +211,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <div class="contact" id="contact">
                 <h2>Contact Us</h2>
-                <p>Address:Business Avenue,kerala india</p>
-                <p>Email:******@gmail.com</p>
-                <p>Phone: *******</p>
+                <p>GECK computer science student</p>
+                <p>Email: code.with.me.an@gmail.com</p>
+                <P>linkedin: <a href="https://www.linkedin.com/in/adithyan-kkd/" target="_blank"> adithyan-kkd</a></p>
             </div>
         </div>
         <div class="followLinks">
-            <h2>FolloW Us</h2>
+            <h2>Follow Us</h2>
             <div class="icons">
-                <a href=""><i class="fa-brands fa-square-facebook"></i></a>
-                <a href=""><i class="fa-brands fa-square-instagram"></i></a>
+                <a href="https://github.com/code-with-me-an" target="_blank"><i class="fa-brands fa-square-github"></i></a>
+                <a href="https://www.instagram.com/v1be_code?" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
                 <a href=""><i class="fa-brands fa-x-twitter"></i></a>
             </div>
         </div>
-        <p>&copy; 2025 YourBrand. All Rights Reserved. | Made with in India</p>
+        <p>&copy; 2026 Quizcraft, All Rights Reserved. | Made with in India</p>
     </footer>
     <script>
 
